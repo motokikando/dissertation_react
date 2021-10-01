@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Auth.module.css";
-import { makeStyles, Theme, ThemeProvider } from "@material-ui/core";
+import { makeStyles, Theme } from "@material-ui/core";
 import { TextField, Button } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { AppDispatch } from "../../app/store";
@@ -53,15 +53,18 @@ const Auth: React.FC = () => {
         }}
         label="Username"
         type="text"
+        name="username"
         value={credential.username}
         onChange={handleInputChange}
       />
+       <br />
       <TextField
         InputLabelProps={{
           shrink: true,
         }}
         label="Password"
         type="password"
+        name="password"
         value={credential.password}
         onChange={handleInputChange}
       />
@@ -71,7 +74,10 @@ const Auth: React.FC = () => {
         size="small"
         className={classes.button}
         onClick={login}
-      ></Button>
+      >
+        {isLoginView ? "Login" : "Register"}
+      </Button>
+
       <span onClick={() => dispatch(toggleMode())}>
         {isLoginView ? "Create new account ?" : "Back to Login"}
       </span>

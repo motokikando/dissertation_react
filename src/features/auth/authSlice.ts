@@ -8,6 +8,7 @@ export const fetchAsyncLogin = createAsyncThunk("auth/login", async (auth: CRED)
   const res = await axios.post<JWT>(`${process.env.REACT_APP_API_URL}/authen/jwt/create`, auth, {
     headers: {
       "Content-Type": "application/json",
+      // "Access-Control-Allow-Origin": 'http://127.0.0.1:3000/authen/jwt/create',
     },
   });
   return res.data;
@@ -90,7 +91,7 @@ export const authSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchAsyncLogin.fulfilled, (state, action: PayloadAction<JWT>) => {
       localStorage.setItem("localJWT", action.payload.access);
-      action.payload.access && (window.location.href = "/tasks");
+      action.payload.access && (window.location.href = "/thesis");
     });
     builder.addCase(fetchAsyncGetMyProf.fulfilled, (state, action: PayloadAction<LOGIN_USER>) => {
       return {
