@@ -1,3 +1,5 @@
+import { title } from "process"
+
 // authSlice.ts
 export interface LOGIN_USER{
     id: number;
@@ -38,48 +40,53 @@ export interface AUTH_STATE {
     loginUser: LOGIN_USER;
     profiles: PROFILE[];
   }
-  /*taskSlice.ts*/
-export interface READ_TASK {
+
+  /*thesisSlice.ts*/
+export interface READ_THESIS {
     id: number;
-    task: string;
-    description: string;
-    criteria: string;
-    status: string;
-    status_name: string;
-    category: number;
-    category_item: string;
-    estimate: number;
-    responsible: number;
-    responsible_username: string;
-    owner: number;
-    owner_username: string;
-    created_at: string;
-    updated_at: string;
+    title: string
+    authors: string
+    year: number
+    evaluation: string
+    evaluation_score: string
+    url: string
+    introducer: number
+    introducer_username: string
+    citaiton: string
+    summary: string
+    comment: string
+    category: number
+    category_item: string
+    created_at: string
+    updated_at: string
   }
-export interface POST_TASK {
+
+export interface POST_THESIS {
     id: number;
-    task: string;
-    description: string;
-    criteria: string;
-    status: string;
-    category: number;
-    estimate: number;
-    responsible: number;
+    title: string
+    authors: string
+    year: number
+    evaluation: string
+    url: string
+    citaiton: string
+    summary: string
+    comment: string
+    category: number
   }
 export interface CATEGORY {
     id: number;
     item: string;
   }
-export interface TASK_STATE {
-    tasks: READ_TASK[];
-    editedTask: POST_TASK;
-    selectedTask: READ_TASK;
+export interface THESIS_STATE {
+    theses: READ_THESIS[];
+    editedThesis: POST_THESIS;
+    selectedThesis: READ_THESIS;
     users: USER[];
     category: CATEGORY[];
   }
 /*TaskList.tsx*/
 export interface SORT_STATE {
-    rows: READ_TASK[];
+    rows: READ_THESIS[];
     order: "desc" | "asc";
     activeKey: string;
   }
