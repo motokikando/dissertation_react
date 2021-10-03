@@ -107,12 +107,12 @@ const ThesisList: React.FC = () => {
               id: 0,
               title: "",
               authors: "",
-              year: 0,
-              evaluation: "",
+              year: 2000,
               url: "",
               citaiton: "",
               summary: "",
               comment: "",
+              evaluation: "",
               category: 0,
             })
           );
@@ -122,7 +122,7 @@ const ThesisList: React.FC = () => {
         Add new
       </Button>
       {/* thesesの最初の要素に文字列が入っている場合のみ表示 */}
-      {theses[0]?.title &&(
+      {theses[0]?.title && (
         <Table size="small" className={classes.table}>
           <TableHead>
             <TableRow>
@@ -139,8 +139,7 @@ const ThesisList: React.FC = () => {
                     column === "citaiton" ||
                     column === "summary" ||
                     column === "comment" ||
-                    column === "category")
-                    && (
+                    column === "category") && (
                     <TableCell align="center" key={colIndex}>
                       <TableSortLabel
                         active={state.activeKey === column}
@@ -161,7 +160,7 @@ const ThesisList: React.FC = () => {
                 {/* 展開されたkeyの一覧をrowに格納 */}
                 {Object.keys(row).map(
                   (key, colIndex) =>
-                     (key === "title" ||
+                    (key === "title" ||
                       key === "authors" ||
                       key === "year" ||
                       key === "evaluation_score" ||
@@ -170,8 +169,7 @@ const ThesisList: React.FC = () => {
                       key === "citaiton" ||
                       key === "summary" ||
                       key === "comment" ||
-                      key === "category")
-                      && (
+                      key === "category") && (
                       <TableCell
                         align="center"
                         className={styles.thesislist__hover}
