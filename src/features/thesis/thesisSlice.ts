@@ -43,7 +43,7 @@ export const fetchAsyncCreateCategory = createAsyncThunk("thesis/createCategory"
   return res.data;
 });
 
-export const fetchAsyncCreateThesis = createAsyncThunk("thesis/createTask", async (thesis: POST_THESIS) => {
+export const fetchAsyncCreateThesis = createAsyncThunk("thesis/createThesis", async (thesis: POST_THESIS) => {
   const res = await axios.post<READ_THESIS>(`${process.env.REACT_APP_API_URL}/api/theses/`, thesis, {
     headers: {
       "Content-Type": "application/json",
@@ -67,7 +67,7 @@ export const fetchAsyncUpdateThesis = createAsyncThunk("thesis/updateThesis", as
   return res.data;
 });
 
-export const fetchAsyncDeleteThesis = createAsyncThunk("task/deleteThesis ", async (id: number) => {
+export const fetchAsyncDeleteThesis = createAsyncThunk("thesis/deleteThesis ", async (id: number) => {
   await axios.delete(`${process.env.REACT_APP_API_URL}/api/theses/${id}/`, {
     headers: {
       "Content-Type": "application/json",
@@ -81,19 +81,19 @@ export const initialState: THESIS_STATE = {
   theses: [
     {
       id: 0,
-      title: "",
-      authors: "",
+      title: "ABC",
+      authors: "A",
       year: 0,
-      evaluation: "",
-      evaluation_score: "",
-      url: "",
+      evaluation: "⭐️⭐️",
+      evaluation_score: "2",
+      url: "...",
       introducer: 0,
-      introducer_username: "",
-      citaiton: "",
-      summary: "",
-      comment: "",
+      introducer_username: "user1",
+      citaiton: "abc",
+      summary: "abc",
+      comment: "abc",
       category: 0,
-      category_item: "",
+      category_item: "a",
       created_at: "",
       updated_at: "",
     },
@@ -157,7 +157,7 @@ export const thesisSlice = createSlice({
     builder.addCase(fetchAsyncGetTheses.fulfilled, (state, action: PayloadAction<READ_THESIS[]>) => {
       return {
         ...state,
-        tasks: action.payload,
+        theses: action.payload,
       };
     });
     builder.addCase(fetchAsyncGetTheses.rejected, () => {
@@ -197,7 +197,7 @@ export const thesisSlice = createSlice({
     builder.addCase(fetchAsyncUpdateThesis.fulfilled, (state, action: PayloadAction<READ_THESIS>) => {
       return {
         ...state,
-        tasks: state.theses.map((t) => (t.id === action.payload.id ? action.payload : t)),
+        theses: state.theses.map((t) => (t.id === action.payload.id ? action.payload : t)),
         editedThesis: initialState.editedThesis,
         selectedThesis: initialState.selectedThesis,
       };

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./App.module.css";
 import { Grid, Avatar } from "@material-ui/core";
-import { makeStyles, MuiThemeProvider, Theme, createMuiTheme } from "@material-ui/core/styles";
+import { makeStyles, MuiThemeProvider, Theme, createTheme } from "@material-ui/core/styles";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import PolymerIcon from "@material-ui/icons/Polymer";
 import { useSelector, useDispatch } from "react-redux";
@@ -24,7 +24,7 @@ import ThesisForm from "./features/thesis/ThesisForm";
 
 import { AppDispatch } from "./app/store";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     secondary: {
       main: "#3cb371",
@@ -114,7 +114,7 @@ const App: React.FC = () => {
               </button>
             </div>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item >
             <ThesisList />
           </Grid>
           <Grid item xs={4}>
