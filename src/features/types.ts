@@ -1,5 +1,3 @@
-import { title } from "process"
-
 // authSlice.ts
 export interface LOGIN_USER{
     id: number;
@@ -84,7 +82,7 @@ export interface THESIS_STATE {
     users: USER[];
     category: CATEGORY[];
   }
-/*TaskList.tsx*/
+/*ThesisList.tsx*/
 export interface SORT_STATE {
     rows: READ_THESIS[];
     order: "desc" | "asc";

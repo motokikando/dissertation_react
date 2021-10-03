@@ -1,0 +1,16 @@
+.thesislist__icon {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    margin-top: 10px;
+    color: dimgray;
+  }
+  .thesislist__hover {
+    cursor: pointer;
+  }
+  button:disabled {
+    color: #ccc;
+    cursor: none;
+  }
