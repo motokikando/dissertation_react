@@ -65,7 +65,7 @@ export interface POST_THESIS {
     authors: string
     year: number
     evaluation: string
-    // introducer: number
+    introducer: number
     url: string
     citaiton: string
     summary: string

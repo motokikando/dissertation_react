@@ -107,7 +107,7 @@ const ThesisList: React.FC = () => {
           authors: "kando",
           year: 2000,
           evaluation: "3",
-          // introducer: 0,
+          introducer: 0,
           url: "...",
           citaiton: "...",
           summary: "...",
