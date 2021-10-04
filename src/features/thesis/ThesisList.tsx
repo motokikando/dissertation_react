@@ -101,23 +101,21 @@ const ThesisList: React.FC = () => {
         color="primary"
         size="small"
         startIcon={<AddCircleOutlineIcon />}
-        onClick={() => {
-          dispatch(
-            editThesis({
-              id: 0,
-              title: "",
-              authors: "",
-              year: 2000,
-              url: "",
-              citaiton: "",
-              summary: "",
-              comment: "",
-              evaluation: "",
-              category: 0,
-            })
-          );
-          dispatch(selectThesis(initialState.selectedThesis));
-        }}
+        onClick = {() => {dispatch(editThesis({
+          id:0,
+          title: "論文1",
+          authors: "kando",
+          year: 2000,
+          evaluation: "3",
+          // introducer: 0,
+          url: "...",
+          citaiton: "...",
+          summary: "...",
+          comment: "...",
+          category: 1,
+        }));
+        dispatch(selectThesis(initialState.selectedThesis));
+      }}
       >
         Add new
       </Button>
@@ -135,7 +133,7 @@ const ThesisList: React.FC = () => {
                     column === "year" ||
                     column === "evaluation" ||
                     column === "url" ||
-                    column === "introducer" ||
+                    // column === "introducer" ||
                     column === "citaiton" ||
                     column === "summary" ||
                     column === "comment" ||
@@ -165,11 +163,11 @@ const ThesisList: React.FC = () => {
                       key === "year" ||
                       key === "evaluation_score" ||
                       key === "url" ||
-                      key === "introducer" ||
+                      // key === "introducer_username" ||
                       key === "citaiton" ||
                       key === "summary" ||
                       key === "comment" ||
-                      key === "category") && (
+                      key === "category_item") && (
                       <TableCell
                         align="center"
                         className={styles.thesislist__hover}
@@ -203,7 +201,7 @@ const ThesisList: React.FC = () => {
                     <DeleteOutlineOutlinedIcon />
                   </button>
                   <button
-                    className={styles.tasklist__icon}
+                    className={styles.thesislist__icon}
                     onClick={() => dispatch(editThesis(row))}
                     disabled={row["introducer"] !== loginUser.id}
                   >

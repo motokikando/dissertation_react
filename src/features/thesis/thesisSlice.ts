@@ -104,6 +104,7 @@ export const initialState: THESIS_STATE = {
     authors: "",
     year: 0,
     evaluation: "",
+    // introducer: 0,
     url: "",
     citaiton: "",
     summary: "",
@@ -192,7 +193,7 @@ export const thesisSlice = createSlice({
       };
     });
     builder.addCase(fetchAsyncCreateThesis.rejected, () => {
-      window.location.href = "/";
+      window.location.href = "/Auth";
     });
     builder.addCase(fetchAsyncUpdateThesis.fulfilled, (state, action: PayloadAction<READ_THESIS>) => {
       return {

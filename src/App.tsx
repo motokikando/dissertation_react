@@ -125,7 +125,8 @@ const App: React.FC = () => {
               justify="center"
               style={{ minHeight: "80vh" }}
             >
-              <Grid container>{editedThesis.category ? <ThesisForm /> : <ThesisDisplay />}</Grid>
+              <Grid container>{editedThesis.id ? undefined : <ThesisDisplay />}</Grid>
+              <ThesisForm />
             </Grid>
           </Grid>
         </Grid>

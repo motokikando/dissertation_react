@@ -120,7 +120,7 @@ const ThesisForm: React.FC = () => {
 
   return (
     <div>
-      <h2>{editedThesis.title ? "Update Dissertation" : "New Dissertation"}</h2>
+      <h2>{editedThesis.id? "Update Dissertation" : "New Dissertation"}</h2>
       <form>
         <TextField
           className={classes.field}
@@ -158,6 +158,17 @@ const ThesisForm: React.FC = () => {
           onChange={handleInputChange}
         />
         <br />
+        <FormControl className={classes.field}>
+          <InputLabel>Evaluation</InputLabel>
+          <Select name="evaluation" value={editedThesis.evaluation} onChange={handleSelectEvaluationChange}>
+            <MenuItem value={1}>⭐️</MenuItem>
+            <MenuItem value={2}>⭐️⭐️</MenuItem>
+            <MenuItem value={3}>⭐️⭐️⭐️</MenuItem>
+            <MenuItem value={4}>⭐️⭐️⭐️⭐️</MenuItem>
+            <MenuItem value={5}>⭐️⭐️⭐️⭐️⭐️</MenuItem>
+          </Select>
+        </FormControl>
+        <br />
         <TextField
           className={classes.field}
           InputLabelProps={{
@@ -177,7 +188,7 @@ const ThesisForm: React.FC = () => {
           }}
           label="Citation"
           type="text"
-          name="citation"
+          name="citaiton"
           value={editedThesis.citaiton}
           onChange={handleInputChange}
         />
@@ -212,17 +223,6 @@ const ThesisForm: React.FC = () => {
             {userOptions}
           </Select>
         </FormControl> */}
-        <FormControl className={classes.field}>
-          <InputLabel>Evaluation</InputLabel>
-          <Select name="evaluation" value={editedThesis.evaluation} onChange={handleSelectEvaluationChange}>
-            <MenuItem value={1}>⭐️</MenuItem>
-            <MenuItem value={2}>⭐️⭐️</MenuItem>
-            <MenuItem value={3}>⭐️⭐️⭐️</MenuItem>
-            <MenuItem value={4}>⭐️⭐️⭐️⭐️</MenuItem>
-            <MenuItem value={5}>⭐️⭐️⭐️⭐️⭐️</MenuItem>
-          </Select>
-        </FormControl>
-        <br />
         <FormControl className={classes.field}>
           <InputLabel>Category</InputLabel>
           <Select name="category" value={editedThesis.category} onChange={handleSelectCatChange}>
