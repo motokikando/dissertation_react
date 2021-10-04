@@ -81,19 +81,19 @@ export const initialState: THESIS_STATE = {
   theses: [
     {
       id: 0,
-      title: "ABC",
-      authors: "A",
-      year: 0,
-      evaluation: "⭐️⭐️",
-      evaluation_score: "2",
+      title: "",
+      authors: "",
+      year: 2000,
+      evaluation: "",
+      evaluation_score: "",
       url: "...",
       introducer: 0,
-      introducer_username: "user1",
-      citaiton: "abc",
-      summary: "abc",
-      comment: "abc",
+      introducer_username: "",
+      citaiton: "",
+      summary: "",
+      comment: "",
       category: 0,
-      category_item: "a",
+      category_item: "",
       created_at: "",
       updated_at: "",
     },
@@ -104,6 +104,7 @@ export const initialState: THESIS_STATE = {
     authors: "",
     year: 0,
     evaluation: "",
+    // introducer: 0,
     url: "",
     citaiton: "",
     summary: "",
@@ -192,7 +193,7 @@ export const thesisSlice = createSlice({
       };
     });
     builder.addCase(fetchAsyncCreateThesis.rejected, () => {
-      window.location.href = "/";
+      window.location.href = "/Auth";
     });
     builder.addCase(fetchAsyncUpdateThesis.fulfilled, (state, action: PayloadAction<READ_THESIS>) => {
       return {

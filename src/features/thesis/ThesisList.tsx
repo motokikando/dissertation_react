@@ -101,28 +101,26 @@ const ThesisList: React.FC = () => {
         color="primary"
         size="small"
         startIcon={<AddCircleOutlineIcon />}
-        onClick={() => {
-          dispatch(
-            editThesis({
-              id: 0,
-              title: "",
-              authors: "",
-              year: 0,
-              evaluation: "",
-              url: "",
-              citaiton: "",
-              summary: "",
-              comment: "",
-              category: 0,
-            })
-          );
-          dispatch(selectThesis(initialState.selectedThesis));
-        }}
+        onClick = {() => {dispatch(editThesis({
+          id:0,
+          title: "論文1",
+          authors: "kando",
+          year: 2000,
+          evaluation: "3",
+          // introducer: 0,
+          url: "...",
+          citaiton: "...",
+          summary: "...",
+          comment: "...",
+          category: 1,
+        }));
+        dispatch(selectThesis(initialState.selectedThesis));
+      }}
       >
         Add new
       </Button>
       {/* thesesの最初の要素に文字列が入っている場合のみ表示 */}
-      {theses[0]?.title &&(
+      {theses[0]?.title && (
         <Table size="small" className={classes.table}>
           <TableHead>
             <TableRow>
@@ -135,12 +133,11 @@ const ThesisList: React.FC = () => {
                     column === "year" ||
                     column === "evaluation" ||
                     column === "url" ||
-                    column === "introducer" ||
+                    // column === "introducer" ||
                     column === "citaiton" ||
                     column === "summary" ||
                     column === "comment" ||
-                    column === "category")
-                    && (
+                    column === "category") && (
                     <TableCell align="center" key={colIndex}>
                       <TableSortLabel
                         active={state.activeKey === column}
@@ -161,17 +158,16 @@ const ThesisList: React.FC = () => {
                 {/* 展開されたkeyの一覧をrowに格納 */}
                 {Object.keys(row).map(
                   (key, colIndex) =>
-                     (key === "title" ||
+                    (key === "title" ||
                       key === "authors" ||
                       key === "year" ||
                       key === "evaluation_score" ||
                       key === "url" ||
-                      key === "introducer" ||
+                      // key === "introducer_username" ||
                       key === "citaiton" ||
                       key === "summary" ||
                       key === "comment" ||
-                      key === "category")
-                      && (
+                      key === "category_item") && (
                       <TableCell
                         align="center"
                         className={styles.thesislist__hover}
@@ -205,7 +201,7 @@ const ThesisList: React.FC = () => {
                     <DeleteOutlineOutlinedIcon />
                   </button>
                   <button
-                    className={styles.tasklist__icon}
+                    className={styles.thesislist__icon}
                     onClick={() => dispatch(editThesis(row))}
                     disabled={row["introducer"] !== loginUser.id}
                   >

@@ -114,10 +114,10 @@ const App: React.FC = () => {
               </button>
             </div>
           </Grid>
-          <Grid item >
+          <Grid item>
             <ThesisList />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item>
             <Grid
               container
               direction="column"
@@ -125,7 +125,8 @@ const App: React.FC = () => {
               justify="center"
               style={{ minHeight: "80vh" }}
             >
-              <Grid item>{editedThesis.category ? <ThesisForm /> : <ThesisDisplay />}</Grid>
+              <Grid container>{editedThesis.id ? undefined : <ThesisDisplay />}</Grid>
+              <ThesisForm />
             </Grid>
           </Grid>
         </Grid>
