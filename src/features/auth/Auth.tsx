@@ -44,44 +44,49 @@ const Auth: React.FC = () => {
   };
 
   return (
-    <div className={styles.auth__root}>
-      <h1>{isLoginView ? "Login" : "Register"}</h1>
-      <br />
-      <TextField
-        InputLabelProps={{
-          shrink: true,
-        }}
-        label="Username"
-        type="text"
-        name="username"
-        value={credential.username}
-        onChange={handleInputChange}
-      />
-       <br />
-      <TextField
-        InputLabelProps={{
-          shrink: true,
-        }}
-        label="Password"
-        type="password"
-        name="password"
-        value={credential.password}
-        onChange={handleInputChange}
-      />
-      <Button
-        variant="contained"
-        color="primary"
-        size="small"
-        className={classes.button}
-        onClick={login}
-      >
-        {isLoginView ? "Login" : "Register"}
-      </Button>
+    <>
+    <div className={styles.container}>
+      <div>
+        <img src="books_1.jpg" alt=""  className={styles.image}/>
+      </div>
 
-      <span onClick={() => dispatch(toggleMode())}>
-        {isLoginView ? "Create new account ?" : "Back to Login"}
-      </span>
+
+      <div className={styles.content}>
+        <h1>Research Share</h1>
+
+        <h1>{isLoginView ? "Login" : "Register"}</h1>
+        <br />
+        <TextField
+          InputLabelProps={{
+            shrink: true,
+          }}
+          label="Username"
+          type="text"
+          name="username"
+          value={credential.username}
+          onChange={handleInputChange}
+        />
+        <br />
+        <TextField
+          InputLabelProps={{
+            shrink: true,
+          }}
+          label="Password"
+          type="password"
+          name="password"
+          value={credential.password}
+          onChange={handleInputChange}
+        />
+        <Button variant="contained" color="primary" size="small" className={classes.button} onClick={login}>
+          {isLoginView ? "Login" : "Register"}
+        </Button>
+
+        <span onClick={() => dispatch(toggleMode())}>
+          {isLoginView ? "Create new account ?" : "Back to Login"}
+        </span>
+      </div>
     </div>
+    </>
   );
 };
 

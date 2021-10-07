@@ -78,7 +78,8 @@ const ThesisForm: React.FC = () => {
   const isDisabled =
     editedThesis.title.length === 0 ||
     editedThesis.authors.length === 0 ||
-    editedThesis.evaluation.length === 0;
+    editedThesis.evaluation.length === 0
+    ;
   //inputTextが空の時は無効
   const isCatDisabled = inputText.length === 0;
 
@@ -89,16 +90,24 @@ const ThesisForm: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value: string | number = e.target.value;
     const name = e.target.name;
-    if (name === "estimate") {
+    if (name === "evaluation") {
       value = Number(value);
     }
     dispatch(editThesis({ ...editedThesis, [name]: value }));
   };
 
-  // const handleSelectRespChange = (e: React.ChangeEvent<{ value: unknown }>) => {
-  //   const value = e.target.value as number;
-  //   dispatch(editThesis({ ...editedThesis, responsible: value }));
+  // const isValidUrl = (editedThesis.url) => {
+  //   try{
+  //     new URL(editedThesis.url);
+  //   } catch (e) {
+  //     console.error(e);
+  //     return false;
+  //   }
+  //   return true;
   // };
+
+
+
   const handleSelectEvaluationChange = (e: React.ChangeEvent<{ value: unknown }>) => {
     const value = e.target.value as string;
     dispatch(editThesis({ ...editedThesis, evaluation: value }));
@@ -120,7 +129,7 @@ const ThesisForm: React.FC = () => {
 
   return (
     <div>
-      <h2>{editedThesis.id? "Update Dissertation" : "New Dissertation"}</h2>
+      <h2>{editedThesis.id ? "Update Dissertation" : "New Dissertation"}</h2>
       <form>
         <TextField
           className={classes.field}
@@ -217,12 +226,7 @@ const ThesisForm: React.FC = () => {
           onChange={handleInputChange}
         />
         <br />
-        {/* <FormControl className={classes.field}>
-          <InputLabel>Responsible</InputLabel>
-          <Select name="responsible" onChange={handleSelectRespChange} value={editedThesis.responsible}>
-            {userOptions}
-          </Select>
-        </FormControl> */}
+
         <FormControl className={classes.field}>
           <InputLabel>Category</InputLabel>
           <Select name="category" value={editedThesis.category} onChange={handleSelectCatChange}>

@@ -85,7 +85,7 @@ const App: React.FC = () => {
             <PolymerIcon className={classes.icon}></PolymerIcon>
           </Grid>
           <Grid item xs={4}>
-            <h1>Dissertation List Board</h1>
+            <h1>Research Share Board</h1>
           </Grid>
           <Grid item xs={4}>
             <div className="styles app__logout">
@@ -125,7 +125,7 @@ const App: React.FC = () => {
               justify="center"
               style={{ minHeight: "80vh" }}
             >
-              <Grid container>{editedThesis.id ? undefined : <ThesisDisplay />}</Grid>
+              <Grid container>{editedThesis.id ? <ThesisForm /> : <ThesisDisplay />}</Grid>
               <ThesisForm />
             </Grid>
           </Grid>

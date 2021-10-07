@@ -12,7 +12,7 @@ ReactDOM.render(
     <Provider store={store}>
       <BrowserRouter>
       <div>
-        <Route exact path="/Auth" component={Auth} />
+        <Route exact path="/" component={Auth} />
         <Route exact path="/thesis" component={App} />
 
       </div>
