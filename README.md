@@ -1,44 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## Research Share
+<img width="1394" alt="スクリーンショット 2021-10-08 23 04 28" src="https://user-images.githubusercontent.com/81904192/136570954-5a6e816b-a67e-4a1a-a53a-17547de92c6c.png">
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+## 概要
+大学院で論文を紹介する機会がありゼミやグループで論文を共有・紹介できるサイトが欲しいと思い今回ポートフォリオを作成しました。
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## 機能一覧
+<img width="881" alt="スクリーンショット 2021-10-08 23 09 16" src="https://user-images.githubusercontent.com/81904192/136571896-07d5e85b-2143-4c44-b593-6f49e0cebdab.png">
+<img width="734" alt="スクリーンショット 2021-10-08 23 09 35" src="https://user-images.githubusercontent.com/81904192/136575848-ae4cd339-aac2-47c8-8e46-d69439669916.png">
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ユーザープロフィール(Avatar画像)
+- 認証機能（ログイン+新規アカウント)
+- 読んだ論文(Dissertation)の作成、閲覧、更新、削除
+- 論文(Dissertation)一覧のソーティング
+- ログインユーザーによる論文(Dissertation)更新・削除制限
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 使用技術
+- TypeScript - 開発言語(フロントエンド)、静的型付け
+- React - SPA構築ライブラリ
+- React Router Dom - ルーティング
+- Redux Toolkit - 状態管理 (Redux簡便化ツール)
+- Marerial-UI - UIデザインツール
+- Axios - HTTPクライアント
+- Python - 開発言語(バックエンド)
+- Django - Webアプリケーションフレームワーク
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+バックエンドリポジトリ
+https://github.com/motokikando/dissertation_api
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+## 工夫した点
+
+- SPA化
+- ログイン認証機能
