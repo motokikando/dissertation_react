@@ -26,6 +26,11 @@ import { SORT_STATE, READ_THESIS } from "../types";
 const useStyles = makeStyles((theme: Theme) => ({
   table: {
     tableLayout: "fixed",
+    options:{
+      paging: false,
+      maxBodyHeight: 300,
+      headerStyle: { position: 'sticky', top: 0 },
+    }
   },
   button: {
     margin: theme.spacing(3),
@@ -107,7 +112,7 @@ const ThesisList: React.FC = () => {
           authors: "kando",
           year: 2000,
           evaluation: "3",
-          introducer: 0,
+          // introducer: 0,
           url: "...",
           citaiton: "...",
           summary: "...",
@@ -121,9 +126,9 @@ const ThesisList: React.FC = () => {
       </Button>
       {/* thesesの最初の要素に文字列が入っている場合のみ表示 */}
       {theses[0]?.title && (
-        <Table size="small" className={classes.table}>
+        <Table size="small" aria-label="simple table" className={classes.table}>
           <TableHead>
-            <TableRow>
+            <TableRow style={{}}>
               {/* columnsを表示 */}
               {/* columnsで{}にcolumnとindexをmapで格納 */}
               {columns.map(
@@ -152,7 +157,7 @@ const ThesisList: React.FC = () => {
               <TableCell></TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody className={styles.cell}>
             {state.rows.map((row, rowIndex) => (
               <TableRow hover key={rowIndex}>
                 {/* 展開されたkeyの一覧をrowに格納 */}

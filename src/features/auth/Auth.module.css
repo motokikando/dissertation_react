@@ -1,13 +1,30 @@
-.auth__root {
-    font-family: serif;
-    color: dimgray;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-  }
-  .auth__root span {
-    cursor: pointer;
-  }
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.content {
+  position: absolute;
+  top: 15%;
+  right: 6%;
+  font-family: serif;
+  color: dimgray;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  cursor: pointer;
+}
+
+.image {
+  width: 100vw;
+  height: 70vw;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+}

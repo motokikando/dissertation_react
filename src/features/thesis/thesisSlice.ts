@@ -104,7 +104,6 @@ export const initialState: THESIS_STATE = {
     authors: "",
     year: 0,
     evaluation: "",
-    introducer: 0,
     url: "",
     citaiton: "",
     summary: "",
