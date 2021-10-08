@@ -46,10 +46,7 @@ const Auth: React.FC = () => {
   return (
     <>
     <div className={styles.container}>
-      <div>
-        <img src="books_1.jpg" alt=""  className={styles.image}/>
-      </div>
-
+    <img src="books_1.jpg" alt=""  className={styles.image}/>
 
       <div className={styles.content}>
         <h1>Research Share</h1>

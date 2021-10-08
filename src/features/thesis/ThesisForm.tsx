@@ -170,11 +170,11 @@ const ThesisForm: React.FC = () => {
         <FormControl className={classes.field}>
           <InputLabel>Evaluation</InputLabel>
           <Select name="evaluation" value={editedThesis.evaluation} onChange={handleSelectEvaluationChange}>
-            <MenuItem value={1}>⭐️</MenuItem>
-            <MenuItem value={2}>⭐️⭐️</MenuItem>
+            <MenuItem value={5}>⭐️</MenuItem>
+            <MenuItem value={4}>⭐️⭐️</MenuItem>
             <MenuItem value={3}>⭐️⭐️⭐️</MenuItem>
-            <MenuItem value={4}>⭐️⭐️⭐️⭐️</MenuItem>
-            <MenuItem value={5}>⭐️⭐️⭐️⭐️⭐️</MenuItem>
+            <MenuItem value={2}>⭐️⭐️⭐️⭐️</MenuItem>
+            <MenuItem value={1}>⭐️⭐️⭐️⭐️⭐️</MenuItem>
           </Select>
         </FormControl>
         <br />

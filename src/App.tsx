@@ -56,7 +56,7 @@ const App: React.FC = () => {
   const Logout = () => {
     localStorage.removeItem("localJWT");
     //ログイン画面に遷移
-    window.location.href = "/Auth";
+    window.location.href = "/";
   };
 
   //imageInputをクリックすることでファイルダイアログを開く
