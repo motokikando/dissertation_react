@@ -42,6 +42,4 @@ https://github.com/motokikando/dissertation_api
 
 
 ## 工夫した点
-
-- SPA化
-- ログイン認証機能
+バックエンドはDjangoを用いてAPI構築、フロントエンドではTypeScript、Reactを用いてSPA化を心がけました。機能としては認証機能（ログイン+新規アカウント)、 読んだ論文(Dissertation)の作成、閲覧、更新、削除、論文(Dissertation)一覧のソーティングなどを実装しました。
