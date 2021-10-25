@@ -28,7 +28,7 @@
 - React - SPA構築ライブラリ
 - React Router Dom - ルーティング
 - Redux Toolkit - 状態管理 (Redux簡便化ツール)
-- Marerial-UI - UIデザインツール
+- Material-UI - UIデザインツール
 - Axios - HTTPクライアント
 - Python - 開発言語(バックエンド)
 - Django - Webアプリケーションフレームワーク
